@@ -5,6 +5,7 @@
  */
 package ec.edu.ups.prueba;
 
+import Controladores.ControladorPez;
 import ec.edu.ups.clases.Ave;
 import ec.edu.ups.clases.NoVascular;
 import ec.edu.ups.clases.Pez;
@@ -33,14 +34,31 @@ public class Main {
 
         List<Animal> lista2 = new ArrayList<>();
         List<Vegetal> lista3 = new ArrayList<>();
+        int op;
+        String SN="";
+        int  opcionAnimal= 0;
+        int opcionAve = 0;
+        int opcionNoVascular = 0;
+        int opcionPez = 0;
+        int opcionSerVivo = 0;
+        int opcionVascular = 0;
+        int opcionVegetal=0;
 
         Scanner l = new Scanner(System.in);
         Scanner l2 = new Scanner(System.in);
         Scanner l3 = new Scanner(System.in);
-        
+        ControladorPez leer=new ControladorPez();
         do{
-            
-        }
+            System.out.println("MENU PRINCIPAL");
+            System.out.println("1. CRUD Aire Acondicionado");
+            System.out.println("2. CRUD Regrigerador");
+            System.out.println("3. CRUD Computador");
+            System.out.println("4. CRUD Televisor");
+            System.out.println("5. Salir");
+            System.out.println("Selecciona una opción");
+            op=l.nextInt();
+        switch(op){
+            case 1:
         System.out.println("INGRESAR DATOS DEL PEZ:");
         System.out.println("Ingresar nombre");
         String nombre = l.nextLine();
@@ -93,7 +111,8 @@ public class Main {
         System.out.println("Ingrese si es capaz de nadar (true/false)");
         boolean capacidadNadar = l2.nextBoolean();
         Ave ave = new Ave(maximaalturaVuelo, tamanoAlas, capacidadvolar, capacidadNadar, domesticoSalvaje, color, tipoAlimento, capacidadCazar, nombre, anosVida, peso, tamano);
-        
+            case 2:
+                break;
         System.out.println("INGRESAR DATOS DEL VEGETAL VASCULAR:");
         System.out.println("Ingresar nombre");
         nombre = l.nextLine();
@@ -120,7 +139,8 @@ public class Main {
         System.out.println("Ingrese la cantidad maxiam de fruto que produce");
         int cantidadMaximaFrutos = l2.nextInt();
         Vascular vascular = new Vascular(tamanoRaiz, tamanoTallo, tamanoHoja, cantidadMaximaFrutos, hojas, frua, usoVegetal, lugarCrecimiento, nombre, anosVida, peso, tamano);
-        
+            case 3:
+                break;
         System.out.println("INGRESAR DATOS DEL VEGETAL NO VASCULAR:");
         System.out.println("Ingresar nombre");
         nombre = l.nextLine();
@@ -187,8 +207,12 @@ public class Main {
             public boolean vivir() {
                 return true;
             }
-        };
+        }
         System.out.println(serVivoAnonimo);
     }
+            System.out.println("desea continuar");
+            SN=l.next();
+   }while(SN.equals("si"));
+   }
 
 }

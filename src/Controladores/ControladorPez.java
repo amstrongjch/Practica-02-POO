@@ -41,10 +41,10 @@ public class ControladorPez {
         }
     }
     
-    public void delete(Pez objeto){
+    public void delete(int codigo){
         for(int i=0;i<lista.size();i++){
             Pez elemento=lista.get(i);
-            if(elemento.getCodigo()==objeto.gedCodigo()){
+            if(elemento.getCodigo()==codigo){
                 lista.remove(i);
             }
     }
